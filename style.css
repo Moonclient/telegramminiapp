@@ -308,7 +308,23 @@ header h1 {
     width: 100%;
     padding: 0;
   }
+  .vendeur-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 100%;
+    overflow-x: auto;
+    justify-content: center;
+  }
+  .vendeur-tags .tag {
+    font-size: 0.89rem;
+    padding: 3px 8px;
+    max-width: 96vw;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
 }
+
 
 .container {
   max-width: 420px;
