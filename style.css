@@ -269,12 +269,44 @@ header h1 {
 }
 
 @media (max-width: 600px) {
+  html, body {
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
   .container {
-    max-width: 98vw;
-    padding: 10px 2px;
+    max-width: 100vw;
+    width: 100vw;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 0 4vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  header, .boutique-header, .contact-links, #filters, .vendeur-card, .produit-card, .galerie-produits {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+  }
+  .contact-links {
+    width: 100%;
+    gap: 10vw;
+    flex-wrap: wrap;
+  }
+  .vendeur-card, .produit-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
   .galerie-produits {
     grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+    padding: 0;
   }
 }
 
