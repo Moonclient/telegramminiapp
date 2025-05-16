@@ -142,11 +142,6 @@ function showBoutiquePage(vendeur) {
     document.getElementById('vendeurs-section').style.display = '';
     document.getElementById('filters').style.display = '';
   };
-  tg.MainButton.text = "Contacter le vendeur";
-  tg.MainButton.show();
-  tg.MainButton.onClick(() => {
-    window.open(vendeur.telegram, '_blank');
-  });
 }
 
 // --- Initialisation ---
@@ -162,7 +157,8 @@ function showBoutiquesSection() {
   document.getElementById('boutiques-section').style.display = '';
   document.getElementById('products-section').style.display = 'none';
   document.getElementById('contact-section').style.display = 'none';
-  tg.MainButton.hide();
+  // Suppression du bouton principal Telegram
+
   renderBoutiqueList();
 }
 
