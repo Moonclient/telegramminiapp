@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>MiniApp Telegram - Boutiques</title>
+  <title>PlugMap - Liste</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css">
@@ -10,23 +10,28 @@
 <body>
   <div class="container">
     <header>
-      <h1>MiniApp Boutiques</h1>
-      <nav id="main-menu">
-        <button class="menu-btn" data-page="home">Boutiques</button>
-        <button class="menu-btn" data-page="contact">Contact</button>
-      </nav>
+      <h1>PlugMap 	&#127757;</h1>
+      <div id="filters">
+        <select id="departement-filter">
+          <option value="">&#128506; Département</option>
+        </select>
+        <select id="livraison-filter">
+          <option value="">&#128756; Livraison</option>
+          <option value="oui">Oui</option>
+          <option value="non">Non</option>
+        </select>
+        <select id="meetup-filter">
+          <option value="">&#127968; Meetup</option>
+          <option value="oui">Oui</option>
+          <option value="non">Non</option>
+        </select>
+      </div>
     </header>
     <main>
-      <section id="boutiques-section">
-        <h2>Choisis ta boutique</h2>
-        <div id="boutique-list"></div>
+      <section id="vendeurs-section">
+        <div id="vendeur-list"></div>
       </section>
-      <section id="products-section" style="display:none;"></section>
-      <section id="contact-section" style="display:none;">
-        <h2>Contact</h2>
-        <p id="contact-info"></p>
-        <a id="contact-link" class="contact-btn" href="#" target="_blank">Contacter sur Telegram</a>
-      </section>
+      <section id="boutique-section" style="display:none;"></section>
     </main>
   </div>
   <script src="app.js"></script>

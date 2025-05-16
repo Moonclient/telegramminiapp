@@ -1,101 +1,162 @@
 const tg = window.Telegram.WebApp;
 tg.expand();
 
-// Définition des boutiques
-const boutiques = [
+// --- Données vendeurs exemple ---
+const vendeurs = [
   {
-    name: "CBD Paris",
-    description: "Boutique premium CBD à Paris.",
+    nom: "CandyLand &#127852;",
+    desc: "Meetup Orleans",
+    departement: "45",
+    livraison: true,
+    meetup: true,
     telegram: "https://t.me/cbdparis_shop",
-    products: [
-      { name: "Huile CBD 10%", desc: "Huile de CBD pure 10%" },
-      { name: "Fleur Amnesia", desc: "Fleur CBD Amnesia premium" },
-      { name: "Résine Afghan", desc: "Résine CBD Afghan" }
+    potato: "https://potato.im/plugparis",
+    signal: "https://signal.me/#p/+33123456789",
+    produits: [
+      { nom: "Frozen Sift", desc: "120u", tarifs: [ { label: '5g', prix: '50€' } ], img: "https://www.newsweed.fr/wp-content/uploads/2023/02/3x-filtre-haschisch-1000x600.jpg" }
     ]
   },
   {
-    name: "CBD Lyon",
-    description: "Spécialités CBD à Lyon.",
+    nom: "CBD Lyon Express",
+    desc: "Spécialités CBD à Lyon, livraison rapide.",
+    departement: "69",
+    livraison: true,
+    meetup: false,
     telegram: "https://t.me/cbdlyon_shop",
-    products: [
-      { name: "Huile CBD 20%", desc: "Huile de CBD pure 20%" },
-      { name: "Fleur OG Kush", desc: "Fleur CBD OG Kush" },
-      { name: "Résine Maroc", desc: "Résine CBD Maroc" }
+    potato: "https://potato.im/pluglyon",
+    signal: "https://signal.me/#p/+33611223344",
+    produits: [
+      { nom: "Huile CBD 20%", desc: "Huile de CBD pure 20%", tarifs: [ { label: '10ml', prix: '90€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80" },
+      { nom: "Fleur OG Kush", desc: "Fleur CBD OG Kush", tarifs: [ { label: '5g', prix: '45€' }, { label: '10g', prix: '85€' } ], img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" },
+      { nom: "Résine Maroc", desc: "Résine CBD Maroc", tarifs: [ { label: '5g', prix: '55€' } ], img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" }
     ]
   },
   {
-    name: "CBD Nice",
-    description: "Sélection CBD Côte d'Azur.",
+    nom: "CBD Nice Côte d'Azur",
+    desc: "Sélection CBD Côte d'Azur, livraison & meetup.",
+    departement: "06",
+    livraison: false,
+    meetup: true,
     telegram: "https://t.me/cbdnice_shop",
-    products: [
-      { name: "Huile CBD 15%", desc: "Huile de CBD pure 15%" },
-      { name: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze" },
-      { name: "Résine Libanais", desc: "Résine CBD Libanais" }
+    potato: "https://potato.im/plugnice",
+    signal: "https://signal.me/#p/+33799887766",
+    produits: [
+      { nom: "Huile CBD 15%", desc: "Huile de CBD pure 15%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80" },
+      { nom: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze", tarifs: [ { label: '5g', prix: '42€' }, { label: '10g', prix: '80€' } ], img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" },
+      { nom: "Résine Libanais", desc: "Résine CBD Libanais", tarifs: [ { label: '5g', prix: '52€' } ], img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" }
     ]
   }
 ];
 
-let selectedBoutiqueIdx = 0;
+// --- Filtres dynamiques ---
+const departements = [
+  "01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","2A","2B","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95"
+];
 
-function renderBoutiqueList() {
-  const list = document.getElementById('boutique-list');
+function fillDepartementFilter() {
+  const select = document.getElementById('departement-filter');
+  departements.forEach(dep => {
+    const opt = document.createElement('option');
+    opt.value = dep;
+    opt.textContent = dep;
+    select.appendChild(opt);
+  });
+}
+
+// --- Affichage vendeurs filtrés ---
+function renderVendeurList() {
+  const list = document.getElementById('vendeur-list');
   list.innerHTML = '';
-  boutiques.forEach((b, idx) => {
+  const dep = document.getElementById('departement-filter').value;
+  const livraison = document.getElementById('livraison-filter').value;
+  const meetup = document.getElementById('meetup-filter').value;
+  let filtered = vendeurs.filter(v =>
+    (!dep || v.departement === dep) &&
+    (!livraison || (livraison === 'oui' ? v.livraison : !v.livraison)) &&
+    (!meetup || (meetup === 'oui' ? v.meetup : !v.meetup))
+  );
+  if (filtered.length === 0) {
+    list.innerHTML = '<p style="text-align:center;color:#b0bec5;">Aucun vendeur trouvé pour ces critères.</p>';
+    return;
+  }
+  filtered.forEach((v, idx) => {
     const card = document.createElement('div');
-    card.className = 'boutique-card' + (idx === selectedBoutiqueIdx ? ' selected' : '');
+    card.className = 'vendeur-card';
     card.innerHTML = `
-      <h3>${b.name}</h3>
-      <p>${b.description}</p>
-      <button data-idx="${idx}">Voir les produits</button>
+      <div class="vendeur-header">
+        <span class="vendeur-nom">${v.nom}</span>
+        <span class="vendeur-tags">
+          <span class="tag departement">${v.departement}</span>
+          ${v.livraison ? '<span class="tag livraison">Livraison</span>' : ''}
+          ${v.meetup ? '<span class="tag meetup">Meetup</span>' : ''}
+        </span>
+      </div>
+      <div class="vendeur-desc">${v.desc}</div>
     `;
-    card.querySelector('button').onclick = () => {
-      selectedBoutiqueIdx = idx;
-      showProductsSection();
-    };
+    card.onclick = () => showBoutiquePage(v);
     list.appendChild(card);
   });
 }
 
-function showProductsSection() {
-  document.getElementById('boutiques-section').style.display = 'none';
-  document.getElementById('products-section').style.display = '';
-  document.getElementById('contact-section').style.display = 'none';
-  renderBoutiquePage();
-  tg.MainButton.text = "Commander";
+// --- Navigation page boutique ---
+function showBoutiquePage(vendeur) {
+  document.getElementById('vendeurs-section').style.display = 'none';
+  document.getElementById('filters').style.display = 'none';
+  const section = document.getElementById('boutique-section');
+  section.style.display = '';
+  section.innerHTML = `
+    <div class="boutique-header">
+      <h2>${vendeur.nom}</h2>
+      <div class="contact-links">
+        <a href="${vendeur.telegram}" target="_blank" class="tg-logo-link" title="Telegram">
+          <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" class="tg-logo" />
+        </a>
+        <a href="${vendeur.potato}" target="_blank" class="potato-logo-link" title="Potato">
+          <img src="https://cdn.jsdelivr.net/gh/enzoferey/potato-logo@main/potato.svg" alt="Potato" class="potato-logo" />
+        </a>
+        <a href="${vendeur.signal}" target="_blank" class="signal-logo-link" title="Signal">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Signal-Logo.svg" alt="Signal" class="signal-logo" />
+        </a>
+      </div>
+    </div>
+    <div class="boutique-desc">${vendeur.desc}</div>
+    <div class="galerie-produits"></div>
+    <button class="menu-btn" id="retour-btn">Retour</button>
+  `;
+  const galerie = section.querySelector('.galerie-produits');
+  vendeur.produits.forEach(prod => {
+    const card = document.createElement('div');
+    card.className = 'produit-card';
+    card.innerHTML = `
+      <img src="${prod.img}" alt="${prod.nom}">
+      <div class="nom">${prod.nom}</div>
+      <div class="desc">${prod.desc}</div>
+      <div class="tarifs">
+        ${prod.tarifs.map(t=>`<span class='tarif-tag'>${t.label} ${t.prix}</span>`).join(' ')}
+      </div>
+    `;
+    galerie.appendChild(card);
+  });
+  document.getElementById('retour-btn').onclick = () => {
+    section.style.display = 'none';
+    document.getElementById('vendeurs-section').style.display = '';
+    document.getElementById('filters').style.display = '';
+  };
+  tg.MainButton.text = "Contacter le vendeur";
   tg.MainButton.show();
   tg.MainButton.onClick(() => {
-    window.open(boutiques[selectedBoutiqueIdx].telegram, '_blank');
+    window.open(vendeur.telegram, '_blank');
   });
 }
 
-function renderBoutiquePage() {
-  const section = document.getElementById('products-section');
-  const b = boutiques[selectedBoutiqueIdx];
-  section.innerHTML = `
-    <div class="boutique-page-header">
-      <h2>${b.name}</h2>
-      <p>${b.description}</p>
-      <a href="${b.telegram}" target="_blank" class="tg-logo-link" title="Contacter sur Telegram">
-        <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" class="tg-logo" />
-      </a>
-    </div>
-    <div class="boutique-products-list"></div>
-  `;
-  const productsList = section.querySelector('.boutique-products-list');
-  b.products.forEach(prod => {
-    const div = document.createElement('div');
-    div.className = 'product';
-    div.innerHTML = `<h2>${prod.name}</h2><p>${prod.desc}</p>`;
-    productsList.appendChild(div);
-  });
-  // Ajout bouton retour
-  const backBtn = document.createElement('button');
-  backBtn.className = 'menu-btn';
-  backBtn.style.marginTop = '16px';
-  backBtn.textContent = 'Retour aux boutiques';
-  backBtn.onclick = () => showBoutiquesSection();
-  section.appendChild(backBtn);
-}
+// --- Initialisation ---
+fillDepartementFilter();
+renderVendeurList();
+
+document.getElementById('departement-filter').onchange = renderVendeurList;
+document.getElementById('livraison-filter').onchange = renderVendeurList;
+document.getElementById('meetup-filter').onchange = renderVendeurList;
+
 
 function showBoutiquesSection() {
   document.getElementById('boutiques-section').style.display = '';
