@@ -54,11 +54,14 @@ header h1 {
     flex-direction: column;
     gap: 0;
   }
-  #filters select {
+  .filters-row select {
     min-width: 0;
     width: 48%;
     max-width: 100%;
     margin-bottom: 0;
+  }
+  .filters-row select:first-child {
+    margin-right: 4%;
   }
 }
 #filters select {
