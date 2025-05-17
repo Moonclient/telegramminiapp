@@ -421,15 +421,14 @@ header h1 {
 
 .filters-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 8px;
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin-bottom: 10px;
 }
-
-.filters-row select {
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow: hidden;
+#filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 @media (max-width: 600px) {
