@@ -73,10 +73,12 @@ function renderVendeurList() {
   const dep = document.getElementById('departement-filter').value;
   const livraison = document.getElementById('livraison-filter').value;
   const meetup = document.getElementById('meetup-filter').value;
+  const postal = document.getElementById('postal-filter') ? document.getElementById('postal-filter').value : '';
   let filtered = vendeurs.filter(v =>
     (!dep || v.departement === dep) &&
     (!livraison || (livraison === 'oui' ? v.livraison : !v.livraison)) &&
-    (!meetup || (meetup === 'oui' ? v.meetup : !v.meetup))
+    (!meetup || (meetup === 'oui' ? v.meetup : !v.meetup)) &&
+    (!postal || (postal === 'oui' ? v.postal : !v.postal))
   );
   if (filtered.length === 0) {
     list.innerHTML = '<p style="text-align:center;color:#b0bec5;">Aucun vendeur trouvé pour ces critères.</p>';
@@ -92,6 +94,7 @@ function renderVendeurList() {
           <span class="tag departement">🗺️ ${v.departement}</span>
           ${v.livraison ? '<span class="tag livraison">🛵</span>' : ''}
           ${v.meetup ? '<span class="tag meetup">🏠</span>' : ''}
+          ${v.postal ? '<span class="tag postal">✈️</span>' : ''}
         </span>
       </div>
       <div class="vendeur-desc">${v.desc}</div>
@@ -117,6 +120,7 @@ function showBoutiquePage(vendeur) {
       <div class="boutique-info-dept" title="Département">🗺️ ${vendeur.departement}</div>
       ${vendeur.livraison ? '<div class="boutique-info-livraison" title="Livraison disponible">🛵 Livraison</div>' : ''}
       ${vendeur.meetup ? '<div class="boutique-info-meetup" title="Meetup possible">🏠 Meetup</div>' : ''}
+      ${vendeur.postal ? '<div class="boutique-info-postal" title="Envoi postal disponible">✈️ Envoi postal</div>' : ''}
     </div>
     <div class="boutique-header"></div>
 

@@ -21,7 +21,7 @@ header h1 {
   font-size: 2.1rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
-  color: #00bcd4;
+  color: #fff;
 }
 
 #filters {
@@ -31,9 +31,9 @@ header h1 {
   margin-bottom: 28px;
 }
 #filters select {
-  background: #181a22;
-  color: #00bcd4;
-  border: 1.5px solid #1976d2;
+  background: #111;
+  color: #fff;
+  border: 1.5px solid #333;
   border-radius: 7px;
   padding: 8px 14px;
   font-size: 1rem;
@@ -51,13 +51,16 @@ header h1 {
 }
 
 .vendeur-card {
-  background: #23242b;
+  background: #18181a;
   border-radius: 13px;
+  border: 1.5px solid #222;
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
   padding: 18px 16px 14px 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  color: #fff;
+
   border-left: 4px solid #00bcd4;
   transition: border-color 0.2s, box-shadow 0.2s;
   cursor: pointer;
@@ -74,10 +77,10 @@ header h1 {
 .vendeur-card .vendeur-nom {
   font-size: 1.18rem;
   font-weight: 600;
-  color: #00bcd4;
+  color: #fff;
 }
 .vendeur-card .vendeur-desc {
-  color: #b0bec5;
+  color: #b0b0b0;
   font-size: 0.98rem;
   margin-bottom: 2px;
 }
@@ -87,7 +90,7 @@ header h1 {
   flex-wrap: wrap;
 }
 .vendeur-card .tag {
-  background: #1976d2;
+  background: #222;
   color: #fff;
   border-radius: 5px;
   padding: 3px 10px;
@@ -111,7 +114,7 @@ header h1 {
 .boutique-header-desc {
   text-align: center;
   margin: 0 auto 18px auto;
-  color: #bfc9d1;
+  color: #b0b0b0;
   font-size: 1.04em;
   max-width: 70vw;
 }
@@ -173,8 +176,8 @@ header h1 {
   display: block;
   box-sizing: border-box;
   padding: 4px;
-  background: #fff;
-  border: 1.5px solid #e0e0e0;
+  background: #18181a;
+  border: 1.5px solid #333;
 }
 .potato-logo, .signal-logo {
   background: #fff;
@@ -196,7 +199,7 @@ header h1 {
 .boutique-header h2 {
   margin: 0;
   font-size: 1.3rem;
-  color: #00bcd4;
+  color: #fff;
 }
 
   display: flex;
@@ -226,6 +229,7 @@ header h1 {
   gap: 4px;
   margin: 10px 0 16px 0;
   font-size: 1.12em;
+  color: #fff;
 }
 .boutique-info-dept, .boutique-info-livraison, .boutique-info-meetup {
   display: flex;
@@ -234,7 +238,7 @@ header h1 {
   font-size: 1em;
 }
 .boutique-desc {
-  color: #b0bec5;
+  color: #b0b0b0;
   font-size: 1.01rem;
   margin-bottom: 14px;
 }
@@ -245,15 +249,17 @@ header h1 {
   gap: 14px;
 }
 .produit-card {
-  background: #23242b;
+  background: #18181a;
   border-radius: 10px;
   padding: 10px 10px 8px 10px;
-  box-shadow: 0 1px 4px rgba(0,188,212,0.07);
-  border-left: 4px solid #1976d2;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  border-left: 4px solid #222;
+  border: 1.5px solid #222;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 170px;
+  color: #fff;
 }
 .produit-card img {
   width: 64px;
@@ -265,12 +271,12 @@ header h1 {
 }
 .produit-card .nom {
   font-size: 1.05rem;
-  color: #00bcd4;
+  color: #fff;
   font-weight: 600;
   margin-bottom: 2px;
 }
 .produit-card .desc {
-  color: #b0bec5;
+  color: #b0b0b0;
   font-size: 0.92rem;
   text-align: center;
   margin-bottom: 6px;
@@ -283,14 +289,14 @@ header h1 {
   justify-content: center;
 }
 .tarif-tag {
-  background: linear-gradient(90deg,#00bcd4 0%,#43e97b 100%);
+  background: #222;
   color: #fff;
   border-radius: 14px;
   padding: 4px 13px;
   font-size: 0.97rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  box-shadow: 0 1px 4px rgba(0,188,212,0.10);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
   border: none;
 }
 
@@ -337,8 +343,12 @@ header h1 {
   display: inline-block;
   vertical-align: middle;
 }
-.retour-btn:hover, .retour-btn:focus {
-  color: #00bfff;
+.retour-btn:hover {
+  background: #333;
+  color: #fff;
+}
+.retour-btn:focus {
+  color: #fff;
 }
 
   margin-top: 0 !important;
