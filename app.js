@@ -100,6 +100,7 @@ function renderVendeurList() {
 
 // --- Navigation page boutique ---
 function showBoutiquePage(vendeur) {
+  tg.MainButton.hide();
   document.getElementById('vendeurs-section').style.display = 'none';
   document.getElementById('filters').style.display = 'none';
   const section = document.getElementById('boutique-section');
@@ -141,7 +142,8 @@ function showBoutiquePage(vendeur) {
     section.style.display = 'none';
     document.getElementById('vendeurs-section').style.display = '';
     document.getElementById('filters').style.display = '';
-  };
+    tg.MainButton.hide();
+  }
 }
 
 // --- Initialisation ---
