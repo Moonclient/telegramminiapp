@@ -101,28 +101,30 @@ function renderVendeurList() {
 // --- Navigation page boutique ---
 function showBoutiquePage(vendeur) {
   tg.MainButton.hide();
+  // Remplace le titre par le nom du vendeur
+  document.querySelector('header h1').innerHTML = vendeur.nom;
+
   document.getElementById('vendeurs-section').style.display = 'none';
   document.getElementById('filters').style.display = 'none';
   const section = document.getElementById('boutique-section');
   section.style.display = '';
   section.innerHTML = `
-    <div class="boutique-header">
-      <h2>${vendeur.nom}</h2>
-      <div class="contact-links">
-        <a href="${vendeur.telegram}" target="_blank" class="tg-logo-link" title="Telegram">
-          <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" class="tg-logo" />
-        </a>
-        <a href="${vendeur.potato}" target="_blank" class="potato-logo-link" title="Potato">
-          <img src="https://cdn.jsdelivr.net/gh/enzoferey/potato-logo@main/potato.svg" alt="Potato" class="potato-logo" />
-        </a>
-        <a href="${vendeur.signal}" target="_blank" class="signal-logo-link" title="Signal">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Signal-Logo.svg" alt="Signal" class="signal-logo" />
-        </a>
-      </div>
-    </div>
-    <div class="boutique-desc">${vendeur.desc}</div>
+    <button class="retour-btn">&larr;</button>
+    <div class="boutique-header"></div>
+
     <div class="galerie-produits"></div>
-    <button class="menu-btn" id="retour-btn">Retour</button>
+    <div class="contact-links" style="margin-top:18px;">
+      <a href="${vendeur.telegram}" target="_blank" class="tg-logo-link" title="Telegram">
+        <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" class="tg-logo" />
+      </a>
+      <a href="${vendeur.potato}" target="_blank" class="potato-logo-link" title="Potato">
+        <img src="https://cdn.jsdelivr.net/gh/enzoferey/potato-logo@main/potato.svg" alt="Potato" class="potato-logo" />
+      </a>
+      <a href="${vendeur.signal}" target="_blank" class="signal-logo-link" title="Signal">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Signal-Logo.svg" alt="Signal" class="signal-logo" />
+      </a>
+    </div>
+    <div class="boutique-header-desc">${vendeur.desc}</div>
   `;
   const galerie = section.querySelector('.galerie-produits');
   vendeur.produits.forEach(prod => {
@@ -138,11 +140,16 @@ function showBoutiquePage(vendeur) {
     `;
     galerie.appendChild(card);
   });
-  document.getElementById('retour-btn').onclick = () => {
+  section.querySelector('.retour-btn').onclick = () => {
     section.style.display = 'none';
     document.getElementById('vendeurs-section').style.display = '';
     document.getElementById('filters').style.display = '';
     tg.MainButton.hide();
+    // Remet le titre d'origine
+    document.querySelector('header h1').innerHTML = 'PlugMap 🌍';
+    // Supprime la description sous le titre
+    let descElem = document.querySelector('.boutique-header-desc');
+    if (descElem) descElem.remove();
   }
 }
 
