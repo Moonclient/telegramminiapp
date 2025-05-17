@@ -79,7 +79,7 @@ function renderVendeurList() {
     (!dep || v.departement === dep) &&
     (!livraison || (livraison === 'oui' ? v.livraison : !v.livraison)) &&
     (!meetup || (meetup === 'oui' ? v.meetup : !v.meetup)) &&
-    (!postal || (postal === 'oui' ? v.postal : !v.postal))
+    (!postal || (postal === 'oui' ? v.postal === true : v.postal !== true))
   );
   if (filtered.length === 0) {
     list.innerHTML = '<p style="text-align:center;color:#b0bec5;">Aucun vendeur trouvé pour ces critères.</p>';
@@ -173,6 +173,9 @@ renderVendeurList();
 document.getElementById('departement-filter').onchange = renderVendeurList;
 document.getElementById('livraison-filter').onchange = renderVendeurList;
 document.getElementById('meetup-filter').onchange = renderVendeurList;
+if(document.getElementById('postal-filter')) {
+  document.getElementById('postal-filter').onchange = renderVendeurList;
+}
 
 
 function showBoutiquesSection() {
