@@ -13,14 +13,17 @@ const vendeurs = [
     potato: "https://potato.im/plugparis",
     signal: "https://signal.me/#p/+33123456789",
     produits: [
-      { nom: "Frozen Sift", desc: "120u", tarifs: [ { label: '5g', prix: '50€' } ], img: "https://www.newsweed.fr/wp-content/uploads/2023/02/3x-filtre-haschisch-1000x600.jpg" }
+      { nom: "Frozen Sift", desc: "120u", tarifs: [ { label: '5g', prix: '50€' }, { label: '10g', prix: '90€' } ], img: "https://www.newsweed.fr/wp-content/uploads/2023/02/3x-filtre-haschisch-1000x600.jpg" },
+      { nom: "Lemon Haze", desc: "NL Flower", tarifs: [ { label: '5g', prix: '40€' }, { label: '10g', prix: '80€' } ], img: "https://bcmedichronic.co/wp-content/uploads/2020/02/Super-Lemon-Haze-2.jpeg" },
+
+      
     ]
   },
   {
     nom: "CBD Lyon Express",
     desc: "Spécialités CBD à Lyon, livraison rapide.",
     departement: "69",
-    livraison: true,
+    livraison: false,
     meetup: false,
     telegram: "https://t.me/cbdlyon_shop",
     potato: "https://potato.im/pluglyon",
@@ -36,7 +39,7 @@ const vendeurs = [
     desc: "Sélection CBD Côte d'Azur, livraison & meetup.",
     departement: "06",
     livraison: false,
-    meetup: true,
+    meetup: false,
     telegram: "https://t.me/cbdnice_shop",
     potato: "https://potato.im/plugnice",
     signal: "https://signal.me/#p/+33799887766",
