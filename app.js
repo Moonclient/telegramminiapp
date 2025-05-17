@@ -26,6 +26,7 @@ const vendeurs = [
     departement: "69",
     livraison: false,
     meetup: false,
+    postal : false,
     telegram: "https://t.me/cbdlyon_shop",
     potato: "https://potato.im/pluglyon",
     signal: "https://signal.me/#p/+33611223344",
@@ -107,6 +108,9 @@ function renderVendeurList() {
 
 // --- Navigation page boutique ---
 function showBoutiquePage(vendeur) {
+  // Masque le logo
+  const logo = document.getElementById('logo-site');
+  if (logo) logo.style.display = 'none';
   tg.MainButton.hide();
   // Remplace le titre par le nom du vendeur
   document.querySelector('header h1').innerHTML = vendeur.nom;
@@ -159,7 +163,10 @@ function showBoutiquePage(vendeur) {
     document.getElementById('filters').style.display = '';
     tg.MainButton.hide();
     // Remet le titre d'origine
-    document.querySelector('header h1').innerHTML = 'PlugMap 🌍';
+    document.querySelector('header h1').innerHTML = 'PlugMap';
+    // Réaffiche le logo
+    const logo = document.getElementById('logo-site');
+    if (logo) logo.style.display = '';
     // Supprime la description sous le titre
     let descElem = document.querySelector('.boutique-header-desc');
     if (descElem) descElem.remove();
