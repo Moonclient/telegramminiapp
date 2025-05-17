@@ -40,6 +40,10 @@ header h1 {
   font-size: 1rem;
   outline: none;
   transition: border 0.18s;
+  min-width: 110px;
+  width: 100%;
+  max-width: 180px;
+  box-sizing: border-box;
 }
 #filters select:focus {
   border: 1.5px solid #00bcd4;
