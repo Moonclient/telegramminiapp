@@ -67,20 +67,19 @@ header h1 {
     flex-wrap: nowrap;
     width: 100%;
     justify-content: center;
+    gap: 8px;
     margin-bottom: 10px;
+  }
+  .filters-row select {
+    width: 50%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
   }
   #filters {
     flex-direction: column;
     gap: 0;
-  }
-  .filters-row select {
-    min-width: 0;
-    width: 48%;
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-  .filters-row select:first-child {
-    margin-right: 4%;
   }
 }
 #filters select {
