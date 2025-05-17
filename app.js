@@ -86,9 +86,9 @@ function renderVendeurList() {
       <div class="vendeur-header">
         <span class="vendeur-nom">${v.nom}</span>
         <span class="vendeur-tags">
-          <span class="tag departement">${v.departement}</span>
-          ${v.livraison ? '<span class="tag livraison">Livraison</span>' : ''}
-          ${v.meetup ? '<span class="tag meetup">Meetup</span>' : ''}
+          <span class="tag departement">🗺️ ${v.departement}</span>
+          ${v.livraison ? '<span class="tag livraison">🛵</span>' : ''}
+          ${v.meetup ? '<span class="tag meetup">🏠</span>' : ''}
         </span>
       </div>
       <div class="vendeur-desc">${v.desc}</div>
