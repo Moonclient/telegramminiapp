@@ -9,6 +9,7 @@ const vendeurs = [
     departement: "45",
     livraison: true,
     meetup: true,
+    postal: true,
     telegram: "https://t.me/cbdparis_shop",
     potato: "https://potato.im",
     signal: "https://signal.me/#p/+33123456789",
