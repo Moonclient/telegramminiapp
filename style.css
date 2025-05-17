@@ -195,6 +195,20 @@ header h1 {
   height: 28px;
   display: block;
 }
+.boutique-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin: 10px 0 16px 0;
+  font-size: 1.12em;
+}
+.boutique-info-dept, .boutique-info-livraison, .boutique-info-meetup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1em;
+}
 .boutique-desc {
   color: #b0bec5;
   font-size: 1.01rem;

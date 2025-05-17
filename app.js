@@ -110,6 +110,11 @@ function showBoutiquePage(vendeur) {
   section.style.display = '';
   section.innerHTML = `
     <button class="retour-btn">&larr;</button>
+    <div class="boutique-infos">
+      <div class="boutique-info-dept" title="Département">🗺️ ${vendeur.departement}</div>
+      ${vendeur.livraison ? '<div class="boutique-info-livraison" title="Livraison disponible">🛵 Livraison</div>' : ''}
+      ${vendeur.meetup ? '<div class="boutique-info-meetup" title="Meetup possible">🏠 Meetup</div>' : ''}
+    </div>
     <div class="boutique-header"></div>
 
     <div class="galerie-produits"></div>
