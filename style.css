@@ -31,6 +31,15 @@ header h1 {
   justify-content: center;
   margin-bottom: 28px;
 }
+
+.filters-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
 #filters select {
   background: #111;
   color: #fff;
