@@ -4,6 +4,7 @@ tg.expand();
 // --- Données vendeurs exemple ---
 const vendeurs = [
   {
+    photo: "candyland.png",
     nom: "CandyLand &#127852;",
     desc: "Meetup Orleans",
     departement: "45",
@@ -21,22 +22,32 @@ const vendeurs = [
     ]
   },
   {
-    nom: "CBD Lyon Express",
-    desc: "Spécialités CBD à Lyon, livraison rapide.",
-    departement: "69",
+    photo: "seven7.jpg",
+    nom: "SEVEN HUSTLERS",
+    desc: "Smoke et Pharma",
+    departement: "74",
     livraison: false,
-    meetup: false,
+    meetup: true,
     postal : false,
-    telegram: "https://t.me/cbdlyon_shop",
+    telegram: "https://t.me/+o4KytXKafTI1NGJk",
     potato: "https://potato.im/pluglyon",
     signal: "https://signal.me/#p/+33611223344",
     produits: [
-      { nom: "Huile CBD 20%", desc: "Huile de CBD pure 20%", tarifs: [ { label: '10ml', prix: '90€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80" },
-      { nom: "Fleur OG Kush", desc: "Fleur CBD OG Kush", tarifs: [ { label: '5g', prix: '45€' }, { label: '10g', prix: '85€' } ], img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" },
-      { nom: "Résine Maroc", desc: "Résine CBD Maroc", tarifs: [ { label: '5g', prix: '55€' } ], img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" }
+      { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '10g', prix: '90€' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp" },
+      { nom: "Cali Flower", desc: "Sour Cherry Biscotti", tarifs: [ { label: '5g', prix: '45€' }, { label: '10g', prix: '85€' } ], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp" },
+      { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '120€' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg" },
+      { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '80€' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg" },
+      { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '120€' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg" },
+      { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp" },
+      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2016/09/13/node_44376/1078315/public/2016/09/13/B979691330Z.1_20160913152855_000%2BG7R7JLQRF.4-0.jpg?itok=GxkZK8QF1473788046" },
+      { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2" },
+      { nom: "Oxycodone", desc: "Pills", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg" },
+      { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp" },
+      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" }
     ]
   },
   {
+    photo: "cbd.svg",
     nom: "CBD Nice Côte d'Azur",
     desc: "Sélection CBD Côte d'Azur, livraison & meetup.",
     departement: "06",
@@ -89,7 +100,9 @@ function renderVendeurList() {
   filtered.forEach((v, idx) => {
     const card = document.createElement('div');
     card.className = 'vendeur-card';
+    const photoUrl = v.photo || 'profile-placeholder.jpg';
     card.innerHTML = `
+      <img class="vendeur-photo" src="${photoUrl}" alt="Photo de profil" style="width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;"/>
       <div class="vendeur-header">
         <span class="vendeur-nom">${v.nom}</span>
         <span class="vendeur-tags">
@@ -119,8 +132,10 @@ function showBoutiquePage(vendeur) {
   document.getElementById('filters').style.display = 'none';
   const section = document.getElementById('boutique-section');
   section.style.display = '';
+  const photoUrl = vendeur.photo || 'profile-placeholder.jpg';
   section.innerHTML = `
     <button class="retour-btn">&larr;</button>
+    <img class="boutique-photo" src="${photoUrl}" alt="Photo de profil" style="width:96px;height:96px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 16px auto;box-shadow:0 2px 8px #bbb;"/>
     <div class="boutique-infos">
       <div class="boutique-info-dept" title="Département">🗺️ ${vendeur.departement}</div>
       ${vendeur.livraison ? '<div class="boutique-info-livraison" title="Livraison disponible">🛵 Livraison</div>' : ''}
@@ -155,8 +170,35 @@ function showBoutiquePage(vendeur) {
         ${prod.tarifs.map(t=>`<span class='tarif-tag'>${t.label} ${t.prix}</span>`).join(' ')}
       </div>
     `;
+    card.querySelector('img').style.cursor = 'pointer';
+    card.querySelector('img').onclick = function(e) {
+      e.stopPropagation();
+      const popup = document.getElementById('popup-image-bottom');
+      const popupImg = document.getElementById('popup-img-bottom');
+      popupImg.src = prod.img;
+      popup.style.display = 'flex';
+    };
     galerie.appendChild(card);
   });
+
+  // Gestion fermeture popup image bottom
+  const popupBottom = document.getElementById('popup-image-bottom');
+  const popupCloseBottom = document.querySelector('.popup-close-bottom');
+  if (popupCloseBottom) {
+    popupCloseBottom.onclick = function() {
+      popupBottom.style.display = 'none';
+      document.getElementById('popup-img-bottom').src = '';
+    };
+  }
+  // Fermer popup si on clique sur le fond de la div (mais pas sur l'image)
+  if (popupBottom) {
+    popupBottom.onclick = function(e) {
+      if (e.target === popupBottom) {
+        popupBottom.style.display = 'none';
+        document.getElementById('popup-img-bottom').src = '';
+      }
+    };
+  }
   section.querySelector('.retour-btn').onclick = () => {
     section.style.display = 'none';
     document.getElementById('vendeurs-section').style.display = '';
