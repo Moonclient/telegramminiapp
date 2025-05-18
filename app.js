@@ -46,7 +46,7 @@ const vendeurs = [
       { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp" },
       { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" },
       { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10CHF' }, { label: '5x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true" },
-      { nom: "PHARMA BOTTLE", desc: "stock limité", tarifs: [ { label: '1x', prix: '20CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" },
+      { nom: "PHARMA BOTTLE", desc: "Stock limité", tarifs: [ { label: '1x', prix: '20CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPGhttps://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true" },
     ]
   },
   {
