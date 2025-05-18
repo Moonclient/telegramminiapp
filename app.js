@@ -8,7 +8,7 @@ const vendeurs = [
     nom: "CandyLand &#127852;",
     desc: "Meetup Orleans",
     departement: "45",
-    livraison: true,
+    livraison: false,
     meetup: true,
     postal: true,
     telegram: "https://t.me/cbdparis_shop",
@@ -43,7 +43,8 @@ const vendeurs = [
       { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2" },
       { nom: "Oxycodone", desc: "Pills", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg" },
       { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp" },
-      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" }
+      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" },
+      { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10€' }, { label: '5x', prix: '20€' } ], img: "" },
     ]
   },
   {
