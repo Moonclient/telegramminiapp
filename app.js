@@ -36,7 +36,7 @@ const vendeurs = [
       { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp" },
       { nom: "Cali Flower", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp" },
       { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg" },
-      { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '80CHF' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg" },
+      { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '100CHF' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg" },
       { nom: "Phener", desc: "Pills", tarifs: [ { label: '1u', prix: '20CHF' }, { label: 'pack', prix: '100CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/3f9f8cbc85b6814535bb984f84e4a6e6/mesoigner-thumbnail-1000-1000-inset/187/704/phenergan-25-mg-cpr-enr-plq-10.webp" },
       { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg" },
       { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp" },
@@ -46,6 +46,7 @@ const vendeurs = [
       { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp" },
       { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" },
       { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10CHF' }, { label: '5x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true" },
+      { nom: "PHARMA BOTTLE", desc: "stock limité", tarifs: [ { label: '1x', prix: '20CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" },
     ]
   },
   {
