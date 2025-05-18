@@ -51,8 +51,8 @@ const vendeurs = [
     nom: "CBD Nice Côte d'Azur",
     desc: "Sélection CBD Côte d'Azur, livraison & meetup.",
     departement: "06",
-    livraison: false,
-    meetup: false,
+    livraison: true,
+    meetup: true,
     telegram: "https://t.me/cbdnice_shop",
     potato: "https://potato.im/plugnice",
     signal: "https://signal.me/#p/+33799887766",
@@ -173,29 +173,29 @@ function showBoutiquePage(vendeur) {
     card.querySelector('img').style.cursor = 'pointer';
     card.querySelector('img').onclick = function(e) {
       e.stopPropagation();
-      const popup = document.getElementById('popup-image-bottom');
-      const popupImg = document.getElementById('popup-img-bottom');
+      const popup = document.getElementById('popup-image');
+      const popupImg = document.getElementById('popup-img');
       popupImg.src = prod.img;
       popup.style.display = 'flex';
     };
     galerie.appendChild(card);
   });
 
-  // Gestion fermeture popup image bottom
-  const popupBottom = document.getElementById('popup-image-bottom');
-  const popupCloseBottom = document.querySelector('.popup-close-bottom');
-  if (popupCloseBottom) {
-    popupCloseBottom.onclick = function() {
-      popupBottom.style.display = 'none';
-      document.getElementById('popup-img-bottom').src = '';
+  // Gestion fermeture popup image overlay (menu contextuel)
+  const popup = document.getElementById('popup-image');
+  const popupClose = document.querySelector('.popup-close');
+  if (popupClose) {
+    popupClose.onclick = function() {
+      popup.style.display = 'none';
+      document.getElementById('popup-img').src = '';
     };
   }
-  // Fermer popup si on clique sur le fond de la div (mais pas sur l'image)
-  if (popupBottom) {
-    popupBottom.onclick = function(e) {
-      if (e.target === popupBottom) {
-        popupBottom.style.display = 'none';
-        document.getElementById('popup-img-bottom').src = '';
+  // Fermer popup si on clique sur le fond (mais pas sur l'image)
+  if (popup) {
+    popup.onclick = function(e) {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+        document.getElementById('popup-img').src = '';
       }
     };
   }
