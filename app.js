@@ -58,9 +58,9 @@ const vendeurs = [
     potato: "https://potato.im/plugnice",
     signal: "https://signal.me/#p/+33799887766",
     produits: [
-      { nom: "Huile CBD 15%", desc: "Huile de CBD pure 15%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80" },
-      { nom: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze", tarifs: [ { label: '5g', prix: '42€' }, { label: '10g', prix: '80€' } ], img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" },
-      { nom: "Résine Libanais", desc: "Résine CBD Libanais", tarifs: [ { label: '5g', prix: '52€' } ], img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" }
+      { nom: "Huile CBD 10%", desc: "Huile de CBD pure 10%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://medias.ea-pharma.digital/catalog/product/cache/d20e53687d4498a01309e274f2f268e8/g/r/granions-cbd10_-01.jpg" },
+      { nom: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze", tarifs: [ { label: '5g', prix: '42€' }, { label: '10g', prix: '80€' } ], img: "https://cdn1.smkg.fr/images/extra-images/fleur-de-cbd-sixty8-super-lemon-haze-indoor-5g-49162.jpg" },
+      { nom: "Résine Libanais", desc: "Résine CBD Libanais", tarifs: [ { label: '5g', prix: '52€' } ], img: "https://cbdoo.fr/wp-content/uploads/2022/02/yg_libanais-min.webp" }
     ]
   }
 ];
