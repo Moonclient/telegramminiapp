@@ -16,8 +16,8 @@ const vendeurs = [
     potato: "https://potato.im",
     signal: "https://signal.me/#p/+33123456789",
     produits: [
-      { nom: "Frozen Sift", desc: "120u", tarifs: [ { label: '5g', prix: '50€' }, { label: '10g', prix: '90€' } ], img: "https://www.newsweed.fr/wp-content/uploads/2023/02/3x-filtre-haschisch-1000x600.jpg" },
-      { nom: "Lemon Haze", desc: "NL Flower", tarifs: [ { label: '5g', prix: '40€' }, { label: '10g', prix: '80€' } ], img: "https://bcmedichronic.co/wp-content/uploads/2020/02/Super-Lemon-Haze-2.jpeg" },
+      { nom: "Frozen Sift", desc: "120u", tarifs: [ { label: '5g', prix: '50€' }, { label: '10g', prix: '90€' } ], img: "https://www.newsweed.fr/wp-content/uploads/2023/02/3x-filtre-haschisch-1000x600.jpg", indisponible: true },
+      { nom: "Lemon Haze", desc: "NL Flower", tarifs: [ { label: '5g', prix: '40€' }, { label: '10g', prix: '80€' } ], img: "https://bcmedichronic.co/wp-content/uploads/2020/02/Super-Lemon-Haze-2.jpeg", indisponible: true },
 
       
     ]
@@ -27,7 +27,7 @@ const vendeurs = [
     photo: "seven7.jpg",
     nom: "SEVEN HUSTLERS",
     desc: "Smoke & Pharma GNV \uD83C\uDDE8\uD83C\uDDED",
-    departement: "74",
+    departement: "GE - Genève",
     livraison: false,
     meetup: true,
     postal : false,
@@ -35,20 +35,20 @@ const vendeurs = [
     potato: "https://potato.im/pluglyon",
     signal: "https://signal.me/#p/+33611223344",
     produits: [
-      { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp" },
-      { nom: "Cali Flower", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp" },
-      { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg" },
-      { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '100CHF' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg" },
-      { nom: "Phener", desc: "Pills", tarifs: [ { label: '1u', prix: '20CHF' }], img: "https://cdn.pim.mesoigner.fr/mesoigner/3f9f8cbc85b6814535bb984f84e4a6e6/mesoigner-thumbnail-1000-1000-inset/187/704/phenergan-25-mg-cpr-enr-plq-10.webp" },
-      { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg" },
-      { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp" },
-      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2016/09/13/node_44376/1078315/public/2016/09/13/B979691330Z.1_20160913152855_000%2BG7R7JLQRF.4-0.jpg?itok=GxkZK8QF1473788046" },
-      { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2" },
-      { nom: "Oxycodone", desc: "Pills | 20mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg" },
-      { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp" },
-      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" },
-      { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10CHF' }, { label: '5x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true" },
-      { nom: "PHARMA BOTTLE", desc: "Stock limité", tarifs: [ { label: '1x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shbottle.jpg?raw=true" },
+      { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp", indisponible: false },
+      { nom: "Cali Flower", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: false },
+      { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg", indisponible: false },
+      { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '100CHF' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg", indisponible: false },
+      { nom: "Phener", desc: "Pills", tarifs: [ { label: '1u', prix: '20CHF' }], img: "https://cdn.pim.mesoigner.fr/mesoigner/3f9f8cbc85b6814535bb984f84e4a6e6/mesoigner-thumbnail-1000-1000-inset/187/704/phenergan-25-mg-cpr-enr-plq-10.webp", indisponible: false },
+      { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg", indisponible: false },
+      { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp", indisponible: false },
+      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2016/09/13/node_44376/1078315/public/2016/09/13/B979691330Z.1_20160913152855_000%2BG7R7JLQRF.4-0.jpg?itok=GxkZK8QF1473788046", indisponible: false },
+      { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2", indisponible: false },
+      { nom: "Oxycodone", desc: "Pills | 20mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg", indisponible: false },
+      { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp", indisponible: false },
+      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG", indisponible: false },
+      { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10CHF' }, { label: '5x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true", indisponible: false },
+      { nom: "PHARMA BOTTLE", desc: "Stock limité", tarifs: [ { label: '1x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shbottle.jpg?raw=true", indisponible: false },
     ]
   },
   {
@@ -63,9 +63,9 @@ const vendeurs = [
     potato: "https://potato.im/plugnice",
     signal: "https://signal.me/#p/+33799887766",
     produits: [
-      { nom: "Huile CBD 15%", desc: "Huile de CBD pure 15%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80" },
-      { nom: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze", tarifs: [ { label: '5g', prix: '42€' }, { label: '10g', prix: '80€' } ], img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" },
-      { nom: "Résine Libanais", desc: "Résine CBD Libanais", tarifs: [ { label: '5g', prix: '52€' } ], img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" }
+      { nom: "Huile CBD 15%", desc: "Huile de CBD pure 15%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80", indisponible: false },
+      { nom: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze", tarifs: [ { label: '5g', prix: '42€' }, { label: '10g', prix: '80€' } ], img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80", indisponible: false },
+      { nom: "Résine Libanais", desc: "Résine CBD Libanais", tarifs: [ { label: '5g', prix: '52€' } ], img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80", indisponible: false }
     ]
   }
 ];
@@ -91,7 +91,9 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 const departements = [
-  "01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","2A","2B","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95"
+  "01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","2A","2B","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95",
+  // Cantons suisses (code à 2 lettres)
+  "AG - Argovie", "AI - Appenzell Rhodes-Intérieures", "AR - Appenzell Rhodes-Extérieures", "BE - Berne", "BL - Bâle-Campagne", "BS - Bâle-Ville", "FR - Fribourg", "GE - Genève", "GL - Glaris", "GR - Grisons", "JU - Jura", "LU - Lucerne", "NE - Neuchâtel", "NW - Nidwald", "OW - Obwald", "SG - Saint-Gall", "SH - Schaffhouse", "SO - Soleure", "SZ - Schwytz", "TG - Thurgovie", "TI - Tessin", "UR - Uri", "VD - Vaud", "VS - Valais", "ZG - Zoug", "ZH - Zurich"
 ];
 
 function fillDepartementFilter() {
@@ -99,7 +101,14 @@ function fillDepartementFilter() {
   departements.forEach(dep => {
     const opt = document.createElement('option');
     opt.value = dep;
-    opt.textContent = dep;
+    // Ajouter le drapeau français ou suisse
+    if (/^(\d{2}|2A|2B)$/.test(dep)) {
+      opt.textContent = '🇫🇷 ' + dep;
+    } else if (/^[A-Z]{2} - /.test(dep)) {
+      opt.textContent = '🇨🇭 ' + dep;
+    } else {
+      opt.textContent = dep;
+    }
     select.appendChild(opt);
   });
 }
@@ -131,7 +140,7 @@ function renderVendeurList() {
       <div class="vendeur-header">
         <span class="vendeur-nom">${v.nom}</span>
         <span class="vendeur-tags">
-          <span class="tag departement">🗺️ ${v.departement}</span>
+          <span class="tag departement">${/^[A-Z]{2} - /.test(v.departement) ? v.departement.split(' - ')[0] + ' 🇨🇭' : '🗺️ ' + v.departement}</span>
           ${v.livraison ? '<span class="tag livraison">🛵</span>' : ''}
           ${v.meetup ? '<span class="tag meetup">🏠</span>' : ''}
           ${v.postal ? '<span class="tag postal">✈️</span>' : ''}
@@ -186,23 +195,26 @@ function showBoutiquePage(vendeur) {
   const galerie = section.querySelector('.galerie-produits');
   vendeur.produits.forEach(prod => {
     const card = document.createElement('div');
-    card.className = 'produit-card';
+    card.className = 'produit-card' + (prod.indisponible ? ' indisponible' : '');
     card.innerHTML = `
-      <img src="${prod.img}" alt="${prod.nom}">
+      <img src="${prod.img}" alt="${prod.nom}" ${prod.indisponible ? 'style="filter: grayscale(1); opacity:0.5; pointer-events:none;"' : ''}>
       <div class="nom">${prod.nom}</div>
       <div class="desc">${prod.desc}</div>
       <div class="tarifs">
         ${prod.tarifs.map(t=>`<span class='tarif-tag'>${t.label} ${t.prix}</span>`).join(' ')}
       </div>
+      ${prod.indisponible ? '<div class="indisponible-label">Indisponible</div>' : ''}
     `;
-    card.querySelector('img').style.cursor = 'pointer';
-    card.querySelector('img').onclick = function(e) {
-      e.stopPropagation();
-      const popup = document.getElementById('popup-image');
-      const popupImg = document.getElementById('popup-img');
-      popupImg.src = prod.img;
-      popup.style.display = 'flex';
-    };
+    if (!prod.indisponible) {
+      card.querySelector('img').style.cursor = 'pointer';
+      card.querySelector('img').onclick = function(e) {
+        e.stopPropagation();
+        const popup = document.getElementById('popup-image');
+        const popupImg = document.getElementById('popup-img');
+        popupImg.src = prod.img;
+        popup.style.display = 'flex';
+      };
+    }
     galerie.appendChild(card);
   });
 

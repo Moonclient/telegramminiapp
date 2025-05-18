@@ -715,6 +715,29 @@ section {
 }
 
 /* --- LIGHTBOX OVERLAY POUR PRODUIT --- */
+
+.produit-card.indisponible {
+  filter: grayscale(1);
+  opacity: 0.5;
+  pointer-events: none;
+  position: relative;
+}
+.indisponible-label {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d32f2f;
+  color: #fff;
+  padding: 3px 14px;
+  border-radius: 8px;
+  font-size: 1.01rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
 .popup-image {
   position: fixed;
   z-index: 9999;
