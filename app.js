@@ -24,7 +24,7 @@ const vendeurs = [
   {
     photo: "seven7.jpg",
     nom: "SEVEN HUSTLERS",
-    desc: "Smoke et Pharma",
+    desc: "Smoke & Pharma GNV \uD83C\uDDE8\uD83C\uDDED",
     departement: "74",
     livraison: false,
     meetup: true,
@@ -33,18 +33,19 @@ const vendeurs = [
     potato: "https://potato.im/pluglyon",
     signal: "https://signal.me/#p/+33611223344",
     produits: [
-      { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '10g', prix: '90€' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp" },
-      { nom: "Cali Flower", desc: "Sour Cherry Biscotti", tarifs: [ { label: '5g', prix: '45€' }, { label: '10g', prix: '85€' } ], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp" },
-      { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '120€' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg" },
-      { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '80€' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg" },
-      { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '120€' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg" },
-      { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp" },
-      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2016/09/13/node_44376/1078315/public/2016/09/13/B979691330Z.1_20160913152855_000%2BG7R7JLQRF.4-0.jpg?itok=GxkZK8QF1473788046" },
-      { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2" },
-      { nom: "Oxycodone", desc: "Pills", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg" },
-      { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp" },
-      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '1x', prix: '55€' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" },
-      { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10€' }, { label: '5x', prix: '20€' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true" },
+      { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp" },
+      { nom: "Cali Flower", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp" },
+      { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg" },
+      { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '80CHF' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg" },
+      { nom: "Phener", desc: "Pills", tarifs: [ { label: '1u', prix: '20CHF' }, { label: 'pack', prix: '100CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/3f9f8cbc85b6814535bb984f84e4a6e6/mesoigner-thumbnail-1000-1000-inset/187/704/phenergan-25-mg-cpr-enr-plq-10.webp" },
+      { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg" },
+      { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp" },
+      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2016/09/13/node_44376/1078315/public/2016/09/13/B979691330Z.1_20160913152855_000%2BG7R7JLQRF.4-0.jpg?itok=GxkZK8QF1473788046" },
+      { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2" },
+      { nom: "Oxycodone", desc: "Pills | 20mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg" },
+      { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp" },
+      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG" },
+      { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10CHF' }, { label: '5x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true" },
     ]
   },
   {
@@ -58,9 +59,9 @@ const vendeurs = [
     potato: "https://potato.im/plugnice",
     signal: "https://signal.me/#p/+33799887766",
     produits: [
-      { nom: "Huile CBD 10%", desc: "Huile de CBD pure 10%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://medias.ea-pharma.digital/catalog/product/cache/d20e53687d4498a01309e274f2f268e8/g/r/granions-cbd10_-01.jpg" },
-      { nom: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze", tarifs: [ { label: '5g', prix: '42€' }, { label: '10g', prix: '80€' } ], img: "https://cdn1.smkg.fr/images/extra-images/fleur-de-cbd-sixty8-super-lemon-haze-indoor-5g-49162.jpg" },
-      { nom: "Résine Libanais", desc: "Résine CBD Libanais", tarifs: [ { label: '5g', prix: '52€' } ], img: "https://cbdoo.fr/wp-content/uploads/2022/02/yg_libanais-min.webp" }
+      { nom: "Huile CBD 15%", desc: "Huile de CBD pure 15%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80" },
+      { nom: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze", tarifs: [ { label: '5g', prix: '42€' }, { label: '10g', prix: '80€' } ], img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" },
+      { nom: "Résine Libanais", desc: "Résine CBD Libanais", tarifs: [ { label: '5g', prix: '52€' } ], img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80" }
     ]
   }
 ];
