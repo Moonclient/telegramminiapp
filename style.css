@@ -107,6 +107,32 @@ header h1 {
 }
 
 .vendeur-card {
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+.vendeur-card-indispo {
+  filter: grayscale(1) opacity(0.6);
+  pointer-events: none;
+  position: relative;
+}
+
+.vendeur-indispo-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e53935;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  font-weight: bold;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  letter-spacing: 1px;
+  opacity: 0.92;
+}
+
+.vendeur-card {
   background: #000000;
   border-radius: 13px;
   border: 1.5px solid #222;

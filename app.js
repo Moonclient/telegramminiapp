@@ -8,6 +8,7 @@ const vendeurs = [
     photo: "candyland.png",
     nom: "CandyLand &#127852;",
     desc: "Meetup Orleans",
+    open: false,
     departement: "45",
     livraison: false,
     meetup: true,
@@ -27,6 +28,7 @@ const vendeurs = [
     photo: "seven7.jpg",
     nom: "SEVEN HUSTLERS",
     desc: "Smoke & Pharma GNV \uD83C\uDDE8\uD83C\uDDED",
+    open: true,
     departement: "GE - Genève",
     livraison: false,
     meetup: true,
@@ -42,7 +44,7 @@ const vendeurs = [
       { nom: "Phener", desc: "Pills", tarifs: [ { label: '1u', prix: '20CHF' }], img: "https://cdn.pim.mesoigner.fr/mesoigner/3f9f8cbc85b6814535bb984f84e4a6e6/mesoigner-thumbnail-1000-1000-inset/187/704/phenergan-25-mg-cpr-enr-plq-10.webp", indisponible: false },
       { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg", indisponible: false },
       { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp", indisponible: false },
-      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2016/09/13/node_44376/1078315/public/2016/09/13/B979691330Z.1_20160913152855_000%2BG7R7JLQRF.4-0.jpg?itok=GxkZK8QF1473788046", indisponible: false },
+      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://lvdneng.rosselcdn.net/sites/default/files//vdn_864w/2016/09/13/node_44376/1078315/public/2016/09/13/B979691330Z.1_20160913152855_000%2BG7R7JLQRF.4-0.jpg?itok=GxkZK8QF1473788046", indisponible: false },
       { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2", indisponible: false },
       { nom: "Oxycodone", desc: "Pills | 20mg", tarifs: [ { label: '1u', prix: '20CHF' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg", indisponible: false },
       { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp", indisponible: false },
@@ -59,11 +61,12 @@ const vendeurs = [
     photo: "cbd.svg",
     nom: "CBD Nice Côte d'Azur",
     desc: "Sélection CBD Côte d'Azur, livraison & meetup.",
+    open: false,
     departement: "06",
     livraison: true,
     meetup: true,
     telegram: "https://t.me/cbdnice_shop",
-    potato: "https://potato.im/plugnice",
+    potato: "https://potato.im/plugnidpistyles_v2ce",
     signal: "https://signal.me/#p/+33799887766",
     produits: [
       { nom: "Huile CBD 15%", desc: "Huile de CBD pure 15%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80", indisponible: false },
@@ -135,11 +138,13 @@ function renderVendeurList() {
     return;
   }
   filtered.forEach((v, idx) => {
+    const indispo = v.open === false;
+
     const card = document.createElement('div');
-    card.className = 'vendeur-card';
+    card.className = 'vendeur-card' + (indispo ? ' vendeur-card-indispo' : '');
     const photoUrl = v.photo || 'profile-placeholder.jpg';
     card.innerHTML = `
-      <img class="vendeur-photo" src="${photoUrl}" alt="Photo de profil" style="width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;"/>
+      <img class="vendeur-photo" src="${photoUrl}" alt="Photo de profil" style="width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;${indispo ? 'filter: grayscale(1) opacity(0.7);' : ''}"/>
       <div class="vendeur-header">
         <span class="vendeur-nom">${v.nom}</span>
         <span class="vendeur-tags">
@@ -150,8 +155,11 @@ function renderVendeurList() {
         </span>
       </div>
       <div class="vendeur-desc">${v.desc}</div>
+      ${indispo ? '<div class="vendeur-indispo-label">Indisponible</div>' : ''}
     `;
-    card.onclick = () => showBoutiquePage(v);
+    if (!indispo) {
+      card.onclick = () => showBoutiquePage(v);
+    }
     list.appendChild(card);
   });
 }
