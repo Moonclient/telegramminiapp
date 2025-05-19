@@ -41,14 +41,17 @@ const vendeurs = [
       { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '100CHF' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg", indisponible: false },
       { nom: "Phener", desc: "Pills", tarifs: [ { label: '1u', prix: '20CHF' }], img: "https://cdn.pim.mesoigner.fr/mesoigner/3f9f8cbc85b6814535bb984f84e4a6e6/mesoigner-thumbnail-1000-1000-inset/187/704/phenergan-25-mg-cpr-enr-plq-10.webp", indisponible: false },
       { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg", indisponible: false },
-      { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp", indisponible: false },
-      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2016/09/13/node_44376/1078315/public/2016/09/13/B979691330Z.1_20160913152855_000%2BG7R7JLQRF.4-0.jpg?itok=GxkZK8QF1473788046", indisponible: false },
+      { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp", indisponible: false },
+      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2016/09/13/node_44376/1078315/public/2016/09/13/B979691330Z.1_20160913152855_000%2BG7R7JLQRF.4-0.jpg?itok=GxkZK8QF1473788046", indisponible: false },
       { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2", indisponible: false },
-      { nom: "Oxycodone", desc: "Pills | 20mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg", indisponible: false },
+      { nom: "Oxycodone", desc: "Pills | 20mg", tarifs: [ { label: '1u', prix: '20CHF' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg", indisponible: false },
       { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp", indisponible: false },
       { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG", indisponible: false },
       { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10CHF' }, { label: '5x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true", indisponible: false },
       { nom: "PHARMA BOTTLE", desc: "Stock limité", tarifs: [ { label: '1x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shbottle.jpg?raw=true", indisponible: false },
+      { nom: "Zolpidem", desc: "Pills | 10mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://medicaments-img.passeportsante.net/1200x675/2024-08-30/zolpidem.webp", indisponible: false },
+      { nom: "Sevre-long", desc: "Pills | 200mg", tarifs: [ { label: '1u', prix: '50CHF' } ], img: "https://www.myhealthshop.ch/media/2c/4c/19/1649761777/1859049_PICFRONT3D_F.jpg", indisponible: false },
+      
     ]
   },
   {
