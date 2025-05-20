@@ -8,7 +8,7 @@ const vendeurs = [
     photo: "candyland.png",
     nom: "CandyLand &#127852;",
     desc: "Meetup Orleans",
-    open: false,
+    open: true,
     departement: "45",
     livraison: false,
     meetup: true,
@@ -17,8 +17,8 @@ const vendeurs = [
     potato: "https://potato.im",
     signal: "https://signal.me/#p/+33123456789",
     produits: [
-      { nom: "Frozen Sift", desc: "120u", tarifs: [ { label: '5g', prix: '50€' }, { label: '10g', prix: '90€' } ], img: "https://www.newsweed.fr/wp-content/uploads/2023/02/3x-filtre-haschisch-1000x600.jpg", indisponible: true },
-      { nom: "Lemon Haze", desc: "NL Flower", tarifs: [ { label: '5g', prix: '40€' }, { label: '10g', prix: '80€' } ], img: "https://bcmedichronic.co/wp-content/uploads/2020/02/Super-Lemon-Haze-2.jpeg", indisponible: true },
+      { nom: "Frozen Sift", desc: "120u", tarifs: [ { label: '5g', prix: '50€' }, { label: '10g', prix: '90€' } ], img: "https://www.newsweed.fr/wp-content/uploads/2023/02/3x-filtre-haschisch-1000x600.jpg", indisponible: false },
+      { nom: "Lemon Haze", desc: "NL Flower", tarifs: [ { label: '5g', prix: '40€' }, { label: '10g', prix: '80€' } ], img: "https://bcmedichronic.co/wp-content/uploads/2020/02/Super-Lemon-Haze-2.jpeg", indisponible: false },
 
       
     ]
@@ -38,8 +38,8 @@ const vendeurs = [
     signal: "https://signal.me/#p/+33611223344",
     produits: [
       { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp", indisponible: false },
-      { nom: "Cali Flower", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: false },
-      { nom: "Cali Flower", desc: "GRAND DADDY CONFIDENTIAL", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: false },
+      { nom: "Cali #1", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: false },
+      { nom: "Cali #2", desc: "GRAND DADDY CONFIDENTIAL", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: false },
       { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg", indisponible: false },
       { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '100CHF' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg", indisponible: false },
       { nom: "Phener", desc: "Pills", tarifs: [ { label: '1u', prix: '20CHF' }], img: "https://cdn.pim.mesoigner.fr/mesoigner/3f9f8cbc85b6814535bb984f84e4a6e6/mesoigner-thumbnail-1000-1000-inset/187/704/phenergan-25-mg-cpr-enr-plq-10.webp", indisponible: false },
