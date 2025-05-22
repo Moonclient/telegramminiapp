@@ -37,7 +37,7 @@ const vendeurs = [
     potato: "https://potato.im/pluglyon",
     signal: "https://signal.me/#p/+33611223344",
     produits: [
-      { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp", indisponible: false },
+      { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp", indisponible: true },
       { nom: "L.A Mousse", desc: "2025 Season | Cheesecake", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shmousse.jpg?raw=true", indisponible: false },
       { nom: "Cali #1", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: false },
       { nom: "Cali #2", desc: "GRAND DADDY CONFIDENTIAL", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: true },
