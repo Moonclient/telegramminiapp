@@ -10,9 +10,9 @@
 <body>
   <div class="container">
     <header>
-      <div class="header-title">
-  <h1>PlugMap</h1>
-  <img src="logo.png" alt="Logo PlugMap" class="logo-site" id="logo-site" height="48"/>
+      <div class="header-title" style="display:flex; align-items:center; gap:16px;">
+  <h1 style="margin:0; font-size:2.2rem; line-height:1;">PlugMap</h1>
+  <img src="logo.png" alt="Logo PlugMap" class="logo-site" id="logo-site" height="64" style="width:auto; height:64px; display:block;"/>
 </div>
       <div id="filters">
         <div class="filters-row">
@@ -43,13 +43,15 @@
       <section id="vendeurs-section">
         <div id="vendeur-list"></div>
       </section>
-      <section id="boutique-section" style="display:none;"></section>
+      <section id="boutique-section" style="display:none;">
+        <div id="product-filters"></div>
+      </section>
     </main>
   </div>
   <div id="popup-image" class="popup-image" style="display:none">
     <span class="popup-close">&times;</span>
     <img id="popup-img" src="" alt="Produit" />
   </div>
-  <script src="app.js?v=36"></script>
+  <script src="app.js?v=34"></script>
 </body>
 </html>

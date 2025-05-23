@@ -267,11 +267,20 @@ header h1 {
 }
 .tg-logo-link:hover .tg-logo,
 .potato-logo-link:hover .potato-logo,
-.signal-logo-link:hover .signal-logo {
-  transform: scale(1.12);
-  box-shadow: 0 2px 12px rgba(0,188,212,0.18);
+.signal-logo-link:hover .signal-logo,
+.glow-effect {
+  animation: glowPulse 1.2s ease-in-out;
+  box-shadow: 0 0 0 0 #00e2b6, 0 0 16px 4px #00e2b6, 0 0 32px 12px #00bcd4;
+  border-radius: 50%;
 }
-.tg-logo-link, .potato-logo-link, .signal-logo-link {
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 0 0 #00e2b6, 0 0 16px 4px #00e2b6, 0 0 32px 12px #00bcd4; }
+  50% { box-shadow: 0 0 0 6px #00e2b6, 0 0 24px 8px #00e2b6, 0 0 48px 18px #00bcd4; }
+  100% { box-shadow: 0 0 0 0 #00e2b6, 0 0 16px 4px #00e2b6, 0 0 32px 12px #00bcd4; }
+}
+
+
+.signal-logo-link, .tg-logo-link, .potato-logo-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -738,6 +747,141 @@ section {
 }
 .contact-btn:hover {
   background: linear-gradient(90deg, #1976d2 0%, #00bcd4 100%);
+}
+
+/* Filtres de tags produits */
+#product-filters {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 18px 0 14px 0;
+}
+.tag-filter-btn {
+  padding: 7px 18px;
+  border: none;
+  border-radius: 18px;
+  background: #232526;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 4px 0 rgba(0,188,80,0.07);
+  transition: background 0.18s, color 0.18s, border 0.18s;
+}
+.tag-filter-btn:hover, .tag-filter-btn.selected {
+  background: #eafbee;
+  color: #0a8f3c;
+  border: 1.2px solid #0a8f3c;
+}
+
+.show-filters-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 11px;
+  border-radius: 18px;
+  border: 1.2px solid #bbb;
+  background: #f5f5f5 !important;
+  color: #444;
+  font-size: 0.92rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.04);
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  margin-bottom: 6px;
+  margin-right: 0;
+  margin-left: 0;
+  float: left;
+}
+
+.show-filters-btn:hover,
+.show-filters-btn:focus {
+  background: #e0e0e0 !important;
+  color: #222;
+  border: 1.5px solid #bbb;
+}
+
+
+.round-action-btn {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 50%;
+  border: 1.2px solid #bbb;
+  background: #f5f5f5;
+  color: #444;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  margin-right: 2px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.04);
+}
+.round-action-btn:hover, .round-action-btn:focus {
+  background: #e0e0e0;
+  color: #222;
+  border: 1.2px solid #bbb;
+}
+.phone-icon {
+  font-size: 1.18em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-dots {
+  font-size: 1.05em;
+  line-height: 1;
+  margin-right: 2px;
+  color: #0a8f3c;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+#filters-list {
+  transition: opacity 0.2s;
+  opacity: 1;
+}
+#filters-list[style*="display: none"] {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+.tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tag {
+  display: inline-block;
+  background: #232526;
+  color: #fff;
+  border-radius: 14px;
+  padding: 3px 12px;
+  font-size: 0.93em;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  opacity: 0.92;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.tag-filter-btn:focus {
+  outline: 2px solid #00bcd4;
 }
 
 /* --- LIGHTBOX OVERLAY POUR PRODUIT --- */

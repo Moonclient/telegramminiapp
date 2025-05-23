@@ -17,10 +17,8 @@ const vendeurs = [
     potato: "https://potato.im",
     signal: "https://signal.me/#p/+33123456789",
     produits: [
-      { nom: "Frozen Sift", desc: "120u", tarifs: [ { label: '5g', prix: '50€' }, { label: '10g', prix: '90€' } ], img: "https://www.newsweed.fr/wp-content/uploads/2023/02/3x-filtre-haschisch-1000x600.jpg", indisponible: true },
-      { nom: "Lemon Haze", desc: "NL Flower", tarifs: [ { label: '5g', prix: '40€' }, { label: '10g', prix: '80€' } ], img: "https://bcmedichronic.co/wp-content/uploads/2020/02/Super-Lemon-Haze-2.jpeg", indisponible: true },
-
-      
+      { nom: "Frozen Sift", desc: "120u", tarifs: [ { label: '5g', prix: '50€' }, { label: '10g', prix: '90€' } ], img: "https://www.newsweed.fr/wp-content/uploads/2023/02/3x-filtre-haschisch-1000x600.jpg", indisponible: false, tags: ["hash", "120u"] },
+      { nom: "Lemon Haze", desc: "NL Flower", tarifs: [ { label: '5g', prix: '40€' }, { label: '10g', prix: '80€' } ], img: "https://bcmedichronic.co/wp-content/uploads/2020/02/Super-Lemon-Haze-2.jpeg", indisponible: false, tags: ["fleur", "NL"] },
     ]
   },
   {
@@ -37,24 +35,23 @@ const vendeurs = [
     potato: "https://potato.im/pluglyon",
     signal: "https://signal.me/#p/+33611223344",
     produits: [
-      { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp", indisponible: true },
-      { nom: "L.A Mousse", desc: "2025 Season | Cheesecake", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shmousse.jpg?raw=true", indisponible: false },
-      { nom: "Cali #1", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: false },
-      { nom: "Cali #2", desc: "GRAND DADDY CONFIDENTIAL", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: true },
-      { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg", indisponible: false },
-      { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '100CHF' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg", indisponible: true },
-      { nom: "Phener", desc: "Pills", tarifs: [ { label: '1u', prix: '20CHF' }], img: "https://cdn.pim.mesoigner.fr/mesoigner/3f9f8cbc85b6814535bb984f84e4a6e6/mesoigner-thumbnail-1000-1000-inset/187/704/phenergan-25-mg-cpr-enr-plq-10.webp", indisponible: true },
-      { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg", indisponible: false },
-      { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp", indisponible: false },
-      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/428bf03f8f23ef979baa003c1033f75e/mesoigner-thumbnail-1000-1000-inset/669/753/rivotril-2-mg-comprime-quadrisecable.webp", indisponible: false },
-      { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2", indisponible: false },
-      { nom: "Oxycodone", desc: "Pills | 20mg", tarifs: [ { label: '1u', prix: '20CHF' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg", indisponible: true },
-      { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp", indisponible: false },
-      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG", indisponible: false },
-      { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10CHF' }, { label: '5x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true", indisponible: false },
-      { nom: "PHARMA BOTTLE", desc: "Stock limité", tarifs: [ { label: '1x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shbottle.jpg?raw=true", indisponible: false },
-      { nom: "Zolpidem", desc: "Pills | 10mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://medicaments-img.passeportsante.net/1200x675/2024-08-30/zolpidem.webp", indisponible: false },
-      { nom: "Sevre-long", desc: "Pills | 200mg", tarifs: [ { label: '1u', prix: '50CHF' } ], img: "https://www.myhealthshop.ch/media/2c/4c/19/1649761777/1859049_PICFRONT3D_F.jpg", indisponible: false },
+      { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp", indisponible: true, tags: ["hash"] },
+      { nom: "Cali #1", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: false, tags: ["flower"] },
+      { nom: "Cali #2", desc: "GRAND DADDY CONFIDENTIAL", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: true, tags: ["flower"] },
+      { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg", indisponible: false, tags: ["syrup","pharma"] },
+      { nom: "Euphon", desc: "Syrup", tarifs: [ { label: '1x', prix: '100CHF' } ], img: "https://5.imimg.com/data5/SELLER/Default/2024/9/451629882/AR/HV/JL/231989463/euphon-cough-syrup-hong-kong-dhl-express.jpg", indisponible: false, tags: ["syrup", "pharma"] },
+      { nom: "Phener", desc: "Pills", tarifs: [ { label: '1u', prix: '20CHF' }], img: "https://cdn.pim.mesoigner.fr/mesoigner/3f9f8cbc85b6814535bb984f84e4a6e6/mesoigner-thumbnail-1000-1000-inset/187/704/phenergan-25-mg-cpr-enr-plq-10.webp", indisponible: true, tags: ["pills","pharma"] },
+      { nom: "Tosseina", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://i.etsystatic.com/54412197/r/il/0ee964/6227329224/il_fullxfull.6227329224_djzf.jpg", indisponible: false, tags: ["syrup","pharma"] },
+      { nom: "Seresta", desc: "Pills | 50mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/a0178481a0e658e0bdc3da58c2d935d4/mesoigner-thumbnail-1000-1000-inset/739/833/seresta-10-mg-comprime.webp", indisponible: false, tags: ["pills","pharma"] },
+      { nom: "Rivotril", desc: "Pills | 2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/428bf03f8f23ef979baa003c1033f75e/mesoigner-thumbnail-1000-1000-inset/669/753/rivotril-2-mg-comprime-quadrisecable.webp", indisponible: false, tags: ["pills","pharma"] },
+      { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2", indisponible: false, tags: ["pills","pharma"] },
+      { nom: "Oxycodone", desc: "Pills | 20mg", tarifs: [ { label: '1u', prix: '20CHF' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg", indisponible: true, tags: ["pills","pharma"] },
+      { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp", indisponible: false, tags: ["pills","pharma"] },
+      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG", indisponible: false, tags: ["comprimé","pharma"] },
+      { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10CHF' }, { label: '5x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true", indisponible: false, tags: ["accessoire"] },
+      { nom: "PHARMA BOTTLE", desc: "Stock limité", tarifs: [ { label: '1x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shbottle.jpg?raw=true", indisponible: false, tags: ["accessoire"] },
+      { nom: "Zolpidem", desc: "Pills | 10mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://medicaments-img.passeportsante.net/1200x675/2024-08-30/zolpidem.webp", indisponible: false, tags: ["pills","pharma"] },
+      { nom: "Sevre-long", desc: "Pills | 200mg", tarifs: [ { label: '1u', prix: '50CHF' } ], img: "https://www.myhealthshop.ch/media/2c/4c/19/1649761777/1859049_PICFRONT3D_F.jpg", indisponible: false, tags: ["pills","pharma"] },
       
     ]
   },
@@ -71,9 +68,9 @@ const vendeurs = [
     potato: "https://potato.im/plugnidpistyles_v2ce",
     signal: "https://signal.me/#p/+33799887766",
     produits: [
-      { nom: "Huile CBD 15%", desc: "Huile de CBD pure 15%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80", indisponible: false },
-      { nom: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze", tarifs: [ { label: '5g', prix: '42€' }, { label: '10g', prix: '80€' } ], img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80", indisponible: false },
-      { nom: "Résine Libanais", desc: "Résine CBD Libanais", tarifs: [ { label: '5g', prix: '52€' } ], img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80", indisponible: false }
+      { nom: "Huile CBD 15%", desc: "Huile de CBD pure 15%", tarifs: [ { label: '10ml', prix: '75€' } ], img: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=200&q=80", indisponible: false, tags: ["huile", "cbd", "15%", "bien-être"] },
+      { nom: "Fleur Lemon Haze", desc: "Fleur CBD Lemon Haze", tarifs: [ { label: '5g', prix: '42€' }, { label: '10g', prix: '80€' } ], img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80", indisponible: false, tags: ["fleur", "cbd", "lemon haze", "relaxant"] },
+      { nom: "Résine Libanais", desc: "Résine CBD Libanais", tarifs: [ { label: '5g', prix: '52€' } ], img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80", indisponible: false, tags: ["résine", "cbd", "libanais", "relaxant"] }
     ]
   }
 ];
@@ -190,7 +187,7 @@ function showBoutiquePage(vendeur) {
       ${vendeur.postal ? '<div class="boutique-info-postal" title="Envoi postal disponible">✈️ Envoi postal</div>' : ''}
     </div>
     <div class="boutique-header"></div>
-
+    <div id="product-filters"></div>
     <div class="galerie-produits"></div>
     <div class="contact-links" style="margin-top:18px;">
       <a href="${vendeur.telegram}" target="_blank" class="tg-logo-link" title="Telegram">
@@ -205,31 +202,123 @@ function showBoutiquePage(vendeur) {
     </div>
     <div class="boutique-header-desc">${vendeur.desc}</div>
   `;
-  const galerie = section.querySelector('.galerie-produits');
-  vendeur.produits.forEach(prod => {
-    const card = document.createElement('div');
-    card.className = 'produit-card' + (prod.indisponible ? ' indisponible' : '');
-    card.innerHTML = `
-      <img src="${prod.img}" alt="${prod.nom}" ${prod.indisponible ? 'style="filter: grayscale(1); opacity:0.5; pointer-events:none;"' : ''}>
-      <div class="nom">${prod.nom}</div>
-      <div class="desc">${prod.desc}</div>
-      <div class="tarifs">
-        ${prod.tarifs.map(t=>`<span class='tarif-tag'>${t.label} ${t.prix}</span>`).join(' ')}
-      </div>
-      ${prod.indisponible ? '<div class="indisponible-label">Indisponible</div>' : ''}
-    `;
-    if (!prod.indisponible) {
-      card.querySelector('img').style.cursor = 'pointer';
-      card.querySelector('img').onclick = function(e) {
-        e.stopPropagation();
-        const popup = document.getElementById('popup-image');
-        const popupImg = document.getElementById('popup-img');
-        popupImg.src = prod.img;
-        popup.style.display = 'flex';
-      };
+
+  // Filtres de tags dynamiques
+  const allTags = Array.from(new Set((vendeur.produits || []).flatMap(p => p.tags || [])));
+  const filterContainer = section.querySelector('#product-filters');
+  const tags = allTags;
+  const selectedTags = [];
+  // Affichage du bouton unique 'Filtres' (icône trois points verticaux)
+  filterContainer.innerHTML = `<button id="show-filters-btn" class="show-filters-btn"><span class="vertical-dots">&#8942;</span> Filtres</button><button id="scroll-bottom-btn" class="round-action-btn" title="Aller en bas"><span class="phone-icon">📞</span></button><div id="filters-list" style="display:none; margin-top:8px;"></div>`;
+  // Ajout du scroll au clic sur le bouton téléphone
+  const scrollBtn = filterContainer.querySelector('#scroll-bottom-btn');
+  if(scrollBtn) {
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      // Quand le scroll est terminé et qu'on est en bas, ajoute l'effet glow
+      function handleGlowOnBottom() {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+          document.querySelectorAll('.tg-logo-link, .potato-logo-link, .signal-logo-link').forEach(el => {
+            el.classList.add('glow-effect');
+          });
+          setTimeout(() => {
+            document.querySelectorAll('.tg-logo-link, .potato-logo-link, .signal-logo-link').forEach(el => {
+              el.classList.remove('glow-effect');
+            });
+          }, 1200);
+          window.removeEventListener('scroll', handleGlowOnBottom);
+        }
+      }
+      window.addEventListener('scroll', handleGlowOnBottom);
+      // Si déjà en bas, déclenche immédiatement
+      setTimeout(() => {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+          handleGlowOnBottom();
+        }
+      }, 400);
+    });
+  }
+  const filtersList = filterContainer.querySelector('#filters-list');
+  filtersList.innerHTML = tags.map(tag => `<button class="tag-filter-btn${selectedTags.includes(tag)?' selected':''}" data-tag="${tag}">${tag}</button>`).join(' ');
+  const showFiltersBtn = filterContainer.querySelector('#show-filters-btn');
+  showFiltersBtn.addEventListener('click', () => {
+    if (filtersList.style.display === 'none') {
+      filtersList.style.display = 'block';
+    } else {
+      filtersList.style.display = 'none';
     }
-    galerie.appendChild(card);
   });
+  filterContainer.querySelectorAll('.tag-filter-btn').forEach(btn => {
+    btn.onclick = function() {
+      const tag = btn.dataset.tag;
+      // Si déjà sélectionné, on désélectionne tout
+      if (btn.classList.contains('selected')) {
+        btn.classList.remove('selected');
+        selectedTags.length = 0;
+        renderProducts(vendeur.produits);
+        return;
+      }
+      // Sinon, on sélectionne ce tag uniquement
+      filterContainer.querySelectorAll('.tag-filter-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedTags.length = 0;
+      selectedTags.push(tag);
+      const filtered = vendeur.produits.filter(p => (p.tags||[]).includes(tag));
+      renderProducts(filtered);
+    }
+  });
+
+  const galerie = section.querySelector('.galerie-produits');
+
+  function renderProducts(filteredProduits) {
+    galerie.innerHTML = '';
+    filteredProduits.forEach(prod => {
+      const card = document.createElement('div');
+      card.className = 'produit-card' + (prod.indisponible ? ' indisponible' : '');
+      card.innerHTML = `
+        <img src="${prod.img}" alt="${prod.nom}" ${prod.indisponible ? 'style=\"filter: grayscale(1); opacity:0.5; pointer-events:none;\"' : ''}>
+        <div class="nom">${prod.nom}</div>
+        <div class="desc">${prod.desc}</div>
+        <div class="tarifs">
+          ${(prod.tarifs||[]).map(t=>`<span class='tarif-tag'>${t.label} ${t.prix}</span>`).join(' ')}
+        </div>
+        ${prod.indisponible ? '<div class="indisponible-label">Indisponible</div>' : ''}
+
+      `;
+      if (!prod.indisponible) {
+        card.querySelector('img').style.cursor = 'pointer';
+        card.querySelector('img').onclick = function(e) {
+          e.stopPropagation();
+          const popup = document.getElementById('popup-image');
+          const popupImg = document.getElementById('popup-img');
+          popupImg.src = prod.img;
+          popup.style.display = 'flex';
+        };
+      }
+      galerie.appendChild(card);
+    });
+  }
+
+  function updateFilteredProducts() {
+    const activeTags = Array.from(section.querySelectorAll('.tag-filter-btn.active')).map(btn => btn.dataset.tag);
+    const filtered = activeTags.length === 0 ? vendeur.produits : vendeur.produits.filter(p => (p.tags||[]).some(tag => activeTags.includes(tag)));
+    renderProducts(filtered);
+  }
+
+  section.querySelectorAll('.tag-filter-btn').forEach(btn => {
+    btn.onclick = function() {
+      btn.classList.toggle('active');
+      updateFilteredProducts();
+    };
+  });
+
+  renderProducts(vendeur.produits);
+
+  // (SUPPRIMÉ car déjà géré dans le filtrage dynamique ci-dessus)
+  // const galerie = section.querySelector('.galerie-produits');
+  // vendeur.produits.forEach(...)
+  // -> tout le rendu des produits est désormais fait via renderProducts()
+
 
   // Gestion fermeture popup image overlay (menu contextuel)
   const popup = document.getElementById('popup-image');
