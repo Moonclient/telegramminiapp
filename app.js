@@ -47,7 +47,7 @@ const vendeurs = [
       { nom: "Xanax", desc: "Pills |2mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://www.xanax.com/-/media/Project/Common/XanaxCom/Home/xanax-alprazolam-2-mg-tablet.png?iar=0&hash=ABCF819B72E9B469D0C15FE418A373C2", indisponible: false, tags: ["pills","pharma"] },
       { nom: "Oxycodone", desc: "Pills | 20mg", tarifs: [ { label: '1u', prix: '20CHF' } ], img: "https://s.france24.com/media/display/7a883816-1072-11e9-aaa3-005056bff430/w:1280/p:16x9/25-08-opiaces-oxycontin-usa.jpg", indisponible: true, tags: ["pills","pharma"] },
       { nom: "Dicodin", desc: "Pills", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://cdn.pim.mesoigner.fr/mesoigner/118f26fb515ae7eacf7bdc23bc81f4c5/mesoigner-thumbnail-300-300-retina-inset/279/164/dicodin-l-p-60-mg-comprime-a-liberation-prolongee.webp", indisponible: false, tags: ["pills","pharma"] },
-      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG", indisponible: false, tags: ["comprimé","pharma"] },
+      { nom: "Dph", desc: "Pills | 50mg", tarifs: [ { label: '2u', prix: '10CHF' } ], img: "https://www.drugs.com/images/pills/fio/LNK03291.JPG", indisponible: false, tags: ["pills","pharma"] },
       { nom: "DOUBLE CUP", desc: "SEVENHUSTLERS CUP", tarifs: [ { label: '2x', prix: '10CHF' }, { label: '5x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shcup.jpg?raw=true", indisponible: false, tags: ["accessoire"] },
       { nom: "PHARMA BOTTLE", desc: "Stock limité", tarifs: [ { label: '1x', prix: '20CHF' } ], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shbottle.jpg?raw=true", indisponible: false, tags: ["accessoire"] },
       { nom: "Zolpidem", desc: "Pills | 10mg", tarifs: [ { label: '1u', prix: '10CHF' } ], img: "https://medicaments-img.passeportsante.net/1200x675/2024-08-30/zolpidem.webp", indisponible: false, tags: ["pills","pharma"] },
@@ -367,27 +367,38 @@ if(document.getElementById('postal-filter')) {
 
 
 function showBoutiquesSection() {
-  document.getElementById('boutiques-section').style.display = '';
-  document.getElementById('products-section').style.display = 'none';
-  document.getElementById('contact-section').style.display = 'none';
+  const vendeursSection = document.getElementById('vendeurs-section');
+  const boutiqueSection = document.getElementById('boutique-section');
+  // On masque une éventuelle section contact si elle existe
+  const contactSection = document.getElementById('contact-section');
+  if (vendeursSection) vendeursSection.style.display = '';
+  if (boutiqueSection) boutiqueSection.style.display = 'none';
+  if (contactSection) contactSection.style.display = 'none';
   // Suppression du bouton principal Telegram
 
-  renderBoutiqueList();
+  renderVendeurList();
 }
 
 function showContactSection() {
-  document.getElementById('boutiques-section').style.display = 'none';
-  document.getElementById('products-section').style.display = 'none';
-  document.getElementById('contact-section').style.display = '';
-  const b = boutiques[selectedBoutiqueIdx];
-  document.getElementById('contact-info').innerHTML = `Contacte <b>${b.name}</b> pour commander ou poser une question.`;
-  const link = document.getElementById('contact-link');
-  link.href = b.telegram;
-  tg.MainButton.text = "Contacter sur Telegram";
-  tg.MainButton.show();
-  tg.MainButton.onClick(() => {
-    window.open(b.telegram, '_blank');
-  });
+  const vendeursSection = document.getElementById('vendeurs-section');
+  const boutiqueSection = document.getElementById('boutique-section');
+  const contactSection = document.getElementById('contact-section');
+  if (vendeursSection) vendeursSection.style.display = 'none';
+  if (boutiqueSection) boutiqueSection.style.display = 'none';
+  if (contactSection) contactSection.style.display = '';
+  // Les lignes suivantes nécessitent une section contact dans le HTML pour fonctionner correctement
+  if (contactSection) {
+    const b = boutiques[selectedBoutiqueIdx];
+    const info = document.getElementById('contact-info');
+    const link = document.getElementById('contact-link');
+    if (info) info.innerHTML = `Contacte <b>${b.name}</b> pour commander ou poser une question.`;
+    if (link) link.href = b.telegram;
+    tg.MainButton.text = "Contacter sur Telegram";
+    tg.MainButton.show();
+    tg.MainButton.onClick(() => {
+      window.open(b.telegram, '_blank');
+    });
+  }
 }
 
 document.querySelectorAll('.menu-btn').forEach(btn => {
