@@ -760,18 +760,18 @@ section {
   margin: 18px 0 14px 0;
 }
 .tag-filter-btn {
-  padding: 7px 18px;
+  padding: 5px 12px;
   border: none;
-  border-radius: 18px;
+  border-radius: 14px;
   background: #232526;
   color: #fff;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-family: inherit;
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 1px 4px 0 rgba(0,188,80,0.07);
   transition: background 0.18s, color 0.18s, border 0.18s;
+  margin: 2px 4px 2px 0;
 }
 .tag-filter-btn:hover, .tag-filter-btn.selected {
   background: #eafbee;
