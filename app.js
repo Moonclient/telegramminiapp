@@ -77,6 +77,9 @@ const vendeurs = [
 
 // --- Filtres dynamiques ---
 
+// Variable globale pour stocker le tag sélectionné
+let selectedTagGlobal = null;
+
 // --- Boutique auto via URL paramètre ---
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -207,7 +210,7 @@ function showBoutiquePage(vendeur) {
   const allTags = Array.from(new Set((vendeur.produits || []).flatMap(p => p.tags || [])));
   const filterContainer = section.querySelector('#product-filters');
   const tags = allTags;
-  const selectedTags = [];
+  const selectedTags = selectedTagGlobal ? [selectedTagGlobal] : [];
   // Affichage du bouton unique 'Filtres' (icône trois points verticaux)
   filterContainer.innerHTML = `<button id="show-filters-btn" class="show-filters-btn"><span class="vertical-dots">&#8942;</span> Filtres</button><button id="scroll-bottom-btn" class="round-action-btn" title="Aller en bas"><span class="phone-icon">📞</span></button><div id="filters-list" style="display:none; margin-top:8px;"></div>`;
   // Ajout du scroll au clic sur le bouton téléphone
@@ -254,15 +257,14 @@ function showBoutiquePage(vendeur) {
       // Si déjà sélectionné, on désélectionne tout
       if (btn.classList.contains('selected')) {
         btn.classList.remove('selected');
-        selectedTags.length = 0;
+        selectedTagGlobal = null;
         renderProducts(vendeur.produits);
         return;
       }
       // Sinon, on sélectionne ce tag uniquement
       filterContainer.querySelectorAll('.tag-filter-btn').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
-      selectedTags.length = 0;
-      selectedTags.push(tag);
+      selectedTagGlobal = tag;
       const filtered = vendeur.produits.filter(p => (p.tags||[]).includes(tag));
       renderProducts(filtered);
     }
