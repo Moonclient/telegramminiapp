@@ -36,6 +36,7 @@ const vendeurs = [
     signal: "https://signal.me/#p/+33611223344",
     produits: [
       { nom: "3x Filtré", desc: "Sticky Fingers | Berry Skittlez", tarifs: [ { label: '1g', prix: '10CHF' } ], img: "https://www.greencanopy-shop.com/wp-content/uploads/2024/03/triple-filtre.webp", indisponible: true, tags: ["hash"] },
+      { nom: "L.A Mousse", desc: "Jaune Mousseux", tarifs: [ { label: '1g', prix: '10CHF' }], img: "https://github.com/Moonclient/telegramminiapp/blob/main/shmousse.jpg?raw=true", indisponible: false, tags: ["hash"] },
       { nom: "Cali #1", desc: "Sour Cherry Biscotti", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: false, tags: ["flower"] },
       { nom: "Cali #2", desc: "GRAND DADDY CONFIDENTIAL", tarifs: [ { label: '1g', prix: '20CHF' }], img: "https://kushfly.com/wp-content/uploads/2024/11/los_exotics_Cherry_biscotti_1.webp", indisponible: true, tags: ["flower"] },
       { nom: "Makatussin", desc: "Syrup", tarifs: [ { label: '1x', prix: '150CHF' } ], img: "https://www.digit-eyes.com/thumbs/1443/552/7680552740055.jpg", indisponible: false, tags: ["syrup","pharma"] },
